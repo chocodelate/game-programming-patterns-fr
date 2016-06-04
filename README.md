@@ -1,22 +1,22 @@
-This is the source repo for the in-progress book [Game Programming Patterns][].
-Issues and pull requests are more than welcome!
+Ceci est le dépôt pour le livre [Game Programming Patterns][].
+Issues et pull requests sont plus que bienvenue !
 
-## Building the Book
+## Construire le livre
 
-The book is written in Markdown (in `book/`). A little Python script (`script/format.py`) converts that along with a SASS file (`asset/style.scss`) and HTML template (`asset/template.html`) to the final HTML (in `html/`). To run the format script locally, you'll need to have Python 2.7-ish, and install Python Markdown, Pygments, and SmartyPants:
+Le livre est écrit en Markdown (dans `book/`). Un petit script Python (`script/format.py`) convertit cela avec un fichier SASS (`asset/style.scss`) et un template HTML (`asset/template.html`) vers le HTML final (dans `html/`). Pour exécuter le script de format localement, vous aurez besoin d'avoir Python 2.7-XXX, et d'installer Python Markdown, Pygments, et SmartyPants :
 
     $ pip install markdown
     $ pip install pygments
     $ pip install smartypants
 
-You may need `sudo` for those. Once that's done, you can run:
+Vous pourriez avoir besoin de `sudo` pour celles-ci. Une fois que c'est fait, vous pouvez exécuter :
 
     $ python script/format.py
 
-Make sure to run this from the root directory of the repo. That will regenerate all of the chapter and section intro HTML files. If you're editing stuff, the script can also be run in watch mode:
+Soyez sûr d'exécuter ceci à partir du répertoire root du dépôt. Cela régénerera tous des chapitres et des intros de section des fichiers HTML. Si vous êtes en train d'éditer des choses, le script peut aussi être exécuté en watch mode :
 
     $ python script/format.py --watch
 
-That will monitor the file system for changes to the markdown files, SASS file, or HTML template, and reprocess them as needed.
+Cela surveillera le système de fichier pour les changements des fichier de markdown, SASS, ou template HTML, et les retraitera au besoin.
 
 [game programming patterns]: http://gameprogrammingpatterns.com/
