@@ -213,6 +213,10 @@ def format_file(path, nav, skip_up_to_date):
     if extension == "xml":
       output = clean_up_xml(output)
 
+    # colorifies original text
+    output = output.replace('[ob]', '<span style="color:#318733;">')
+    output = output.replace('[oe]', '</span>')
+
     out.write(output)
 
   global total_words
