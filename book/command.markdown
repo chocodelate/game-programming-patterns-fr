@@ -17,7 +17,7 @@ mangles whatever metaphor it's trying to establish. Outside of the weird world
 of software where words can mean anything, a "client" is a *person* -- someone
 you do business with. Last I checked, human beings can't be "parameterized".[oe]
 
-Je crois qu'on peut s'accorder sur le fait que c'est une phrase horrible. En tout premier lieu, ça broie n'importe quelle métaphore que ca  essaie d'établir. Hors de l'étrange monde du logiciel où les mots peuvent vouloir dire quelque chose, un "client" est une *personne* -- quelqu'un avec qui tu fais du business. La dernière fois que j'ai vérifié, l'être humain ne peut pas être "paramétré".
+Je crois qu'on peut s'accorder sur le fait que c'est une phrase horrible. En tout premier lieu, ça broie n'importe quelle métaphore qu'on  essaie d'établir. Hors de l'étrange monde du logiciel où les mots peuvent vouloir dire quelque chose, un "client" est une *personne* -- quelqu'un avec qui tu fais du business. La dernière fois que j'ai vérifié, l'être humain ne peut pas être "paramétré".
 
 [ob]Then, the rest of that sentence is just a list of stuff you could maybe possibly
 use the pattern for. Not very illuminating unless your use case happens to be in
@@ -52,7 +52,7 @@ program imperatively at runtime. You can get an object that represents the class
 of some other object, and you can play with that to see what the type can do. In
 other words, reflection is a *reified type system*.[oe]
 
-Les *systèmes de réflexion* dans certains langages vous permettent de travailler avec les types dans votre programme dans un style impératif à l'exécution. Vous pouvez récupérer un objet qui représente une classe d'un autre objet, et vous pouvez jouer avec ça pour voir ce que le type peut faire. En d'autres termes, la réflexion est un *système de type réifié*.
+Les *systèmes de réflexion* dans certains langages vous permettent de travailler avec les types dans votre programme dans un style impératif à l'exécution. Vous pouvez récupérer un objet qui représente une classe d'un autre objet, et vous pouvez jouer avec pour voir ce que le type peut faire. En d'autres termes, la réflexion est un *système de type réifié*.
 
 </aside>
 
@@ -61,7 +61,7 @@ it into a piece of *data* -- an object -- that you can stick in a variable, pass
 to a function, etc. So by saying the Command pattern is a "reified method call",
 what I mean is that it's a method call wrapped in an object.[oe]
 
-Les deux termes signifient à la fois prendre un <span name="reflection">*concept*</span> et transformer ça en un morceau de *données* -- un objet -- que vous pouvez mettre dans une variable, passer à une fonction, etc. Donc en disant que le patron Commande est un "appel de méthode réifié", ce que je veux dire est que c'est un appel de méthode enveloppé dans un objet.
+Les deux termes signifient à la fois prendre un <span name="reflection">*concept*</span> et le transformer en un morceau de *données* -- un objet -- que vous pouvez mettre dans une variable, passer à une fonction, etc. Donc en disant que le patron Commande est un "appel de méthode réifié", ce que je veux dire est que c'est un appel de méthode enveloppé dans un objet.
 
 [ob]That sounds a lot like a "callback", "first-class function", "function pointer",
 "closure", or "partially applied function" depending on which language you're
@@ -463,7 +463,7 @@ astonished at how straightforward it was and how well it worked. It takes
 discipline to make sure every data modification goes through a command, but once
 you do that, the rest is easy.[oe]
 
-La première fois que j'ai implémenté ça dans un éditeur de niveau, je me sentais comme un génie. J'étais étonné combien c'était simple et à quel point ca  marchait bien. Ca demande de la discipline pour être sûr que chaque modification de données le fait via une commande, mais une fois que vous l'avez fait, le reste est simple.
+La première fois que je l'ai implémenté dans un éditeur de niveau, je me sentais comme un génie. J'étais étonné combien c'était simple et à quel point ca  marchait bien. Cela demande de la discipline pour être sûr que chaque modification de données le fait via une commande, mais une fois que vous l'avez fait, le reste est simple.
 
 <aside name="replay">
 
@@ -509,14 +509,14 @@ commands is still useful even in languages that have closures. If your command
 has multiple operations (like undoable commands), mapping that to a single
 function is awkward.[oe]
 
-Je dis bien *quelque* sorte par ce que construire de vraies classes ou structures pour des commandes est tout de même utile même dans des langages qui ont des fermetures. Si votre commande a de multiples opérations (comme des commandes annulables), faire correspondre ça à une simple fonction est maladroit.
+Je dis bien *quelque* sorte par ce que construire de vraies classes ou structures pour des commandes est tout de même utile même dans des langages qui ont des fermetures. Si votre commande a de multiples opérations (comme des commandes annulables), les faires correspondre à une simple fonction est maladroit.
 
 [ob]Defining an actual class with fields also helps readers easily tell what data
 the command contains. Closures are a wonderfully terse way of automatically
 wrapping up some state, but they can be so automatic that it's hard to see what
 state they're actually holding.[oe]
 
-Définir une vraie classe avec des champs aide les lecteurs à dire facilement quelles données la commande contient. Les fermetures sont un moyen génialement concis d'envelopper un état, mais elle peuvent être si automatique qu'il peut être difficile de voir quel état elles contiennent.
+Définir une vraie classe avec des champs aide les lecteurs à dire facilement quelles données la commande contient. Les fermetures sont un moyen génialement concis d'envelopper un état, mais elle peuvent être tellement automatiques qu'il peut être difficile de voir quel état elles contiennent.
 
 </aside>
 
@@ -573,7 +573,7 @@ Si vous êtes à l'aise avec un style fonctionnel, cette façon de faire les cho
     `execute()` method into a <a href="subclass-sandbox.html"
     class="pattern">Subclass Sandbox</a>.[oe]
 
- *  Vous pourriez finir avec beaucoup de classe de commandes. En vue de rendre cela plus simple à les    implémenter, il est souvent utile de définir une classe de base concrète avec des tas de méthodes avantageuses que les commandes dérivées peuvent composer pour définir leur comportement. Cela transforme la méthode principale de la commande, `execute()`, en le patron <a href="subclass-sandbox.html"
+ *  Vous pourriez finir avec beaucoup de classe de commandes. En vue de rendre cela plus simple à implémenter, il est souvent utile de définir une classe de base concrète avec des tas de méthodes avantageuses que les commandes dérivées peuvent composer pour définir leur comportement. Cela transforme la méthode principale de la commande, `execute()`, en le patron <a href="subclass-sandbox.html"
     class="pattern">Bac à sable de sous-classe</a>.
 
  * [ob]In our examples, we explicitly chose which actor would handle a command. In

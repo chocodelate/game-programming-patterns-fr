@@ -8,7 +8,7 @@ nothing else, when you get dragged into an <span name="O_ammo">argument</span>
 about how terrible (or awesome) design patterns and software architecture are,
 it will give you some ammo to use.[oe]
 
-Avant que nous plongions la tête la première dans une pile de patrons, je pense que ça pourrait aider de donner un aperçu de comment je vois l'architecture logiciel et comment elle s'applique au jeux. Cela pourrait vous aider à mieux comprendre le reste de ce livre. Sinon, quand vous tenterez <span name="ammo">d'argumenter</span> si un patron de conception et une architecture logiciel sont nuls (ou géniaux), ça vous donnera quelques munitions à utiliser.
+Avant que nous plongions la tête la première dans une pile de patrons de conception, je pense que il pourrait servir d'avoir un aperçu de comment je vois l'architecture logicielle et comment elle s'applique au jeux. Cela pourrait vous aider à mieux comprendre le reste de ce livre. Sinon, quand vous tenterez <span name="ammo">d'argumenter</span> si un patron de conception et une architecture logicielle sont nuls (ou géniaux), ça vous donnera quelques munitions à utiliser.
 
 
 <aside name="O_ammo">
@@ -26,7 +26,7 @@ Notez que je n'ai pas présumé de quel coté vous êtes dans ce combat. Comme t
 
 [ob]## What is Software Architecture?[oe]
 
-## Qu'est qu'une architecture logiciel ?
+## Qu'est qu'une architecture logicielle ?
 
 [ob]<span name="O_won't">If</span> you read this book cover to cover, you won't come
 away knowing the linear algebra behind 3D graphics or the calculus behind game
@@ -54,7 +54,7 @@ it's just "jam the whole thing into `main()` and see what happens", so I think
 it's more interesting to talk about what makes for *good* organization. How do
 we tell a good architecture from a bad one?[oe]
 
-A la place, ce livre parle du code *entre* tout ça. C'est moins sur l'écriture du code que sur son *organisation*. Tout programme a une *certaine* organisation, même si c'est juste  "tout foutre dans `main()` et voir ce qui arrive", donc je crois qu'il est plus intéressant de parler de ce qui fait une *bonne* organisation. Comment parler d'une bonne architecture à partir d'une mauvaise ?
+A la place, ce livre parle du code *entre* tout ça. C'est moins sur l'écriture du code que sur son *organisation*. Tout programme a une *certaine* organisation, même si c'est juste  "tout mettre dans `main()` et voir ce qui arrive", donc je crois qu'il est plus intéressant de parler de ce qui fait une *bonne* organisation. Comment distinguer une bonne architecture d'une mauvaise ?
 
 [ob]I've been mulling over this question for about five years. Of course, like you,
 I have an intuition about good design. We've all suffered through codebases so
@@ -67,7 +67,7 @@ them out back and put them out of their misery.[oe]
 
 </aside>
 
-J'ai ressassé cette question pendant cinq années. Bien sûr, comme vous, j'ai une intuition d'une bonne conception. Nous avons tous souffert de ces codebases si <span name="suffered">mauvais</span>, le meilleur que vous pourriez espérer faire est de les reprendre et d'y enlever leur misère.
+J'ai ressassé cette question pendant cinq années. Bien sûr, comme vous, j'ai une intuition d'une bonne conception. Nous avons tous souffert de ces codebases si <span name="suffered">mauvaises</span>, le mieux que vous pourriez espérer leur faire est de mettre fin à leur calvaire.
 
 <aside name="suffered">
 
@@ -105,7 +105,7 @@ sully their text editor with it -- its design is irrelevant. The measure of a
 design is how easily it accommodates changes. With no changes, it's a runner who
 never leaves the starting line.[oe]
 
-Permettez moi de décomposer ça un peu. La première pièce clé est que une *architecture* est focalisée sur le *changement*. Quelqu'un a à modifier le codebase. Si personne ne touche le code -- si par ce que c'est parfait et complet ou si misérable que personne ne souillera son éditeur de texte avec ça -- sa conception n'est pas pertinente. L'évaluation d'une conception est fonction de combien elle rend facile les modifications. Sans aucune modification, c'est comme un coureur qui ne quitte jamais la ligne de départ.
+Permettez moi de décomposer ça un peu. La première pièce clé est que une *architecture* est focalisée sur le *changement*. Quelqu'un a à modifier le codebase. Si personne ne touche le code -- si parce que c'est parfait et complet ou bien si misérable que personne ne souillera son éditeur de texte avec ça -- sa conception n'est pas pertinente. L'évaluation d'une conception est fonction de combien elle rend facile les modifications. Sans aucune modification, c'est comme un coureur qui ne quitte jamais la ligne de départ.
 
 [ob]### How do you make a change?[oe]
 
@@ -173,7 +173,7 @@ code integrate seamlessly with the rest of the program. If you do it right, the
 next person to come along won't be able to tell when any line of code was
 written.[oe]
 
-Vous foutez un peu plus de code dans votre jeu, mais vous ne voulez pas que la personne suivante parcours les plis que vous avez laissé dans les sources. A moins que le changement soit mineur, il y a habituellement un peu de réorganisation à faire pour que votre nouveau code s'intègre de façon transparente avec le reste du programme. Si vous faites ça correctement, la personne suivante ne sera pas capable de dire quand quelconque ligne de code a été écrite.
+Vous venez de balancer un peu plus de code dans votre jeu, mais vous ne voulez pas que la personne suivante tombe sur les plis que vous avez laissé dans les sources. A moins que le changement soit mineur, il y a habituellement un peu de réorganisation à faire pour que votre nouveau code s'intègre de façon transparente avec le reste du programme. Si vous faites cela correctement, la personne suivante ne sera pas capable de dire quand quelconque ligne de code a été écrite.
 
 [ob]In short, the flow chart for programming is something like:[oe]
 
@@ -202,7 +202,7 @@ find strategies to reduce the volume of it. This book has an entire section on
 [*decoupling* patterns](decoupling-patterns.html), and a large chunk of *Design
 Patterns* is about the same idea.[oe]
 
-Bien que ce ne soit pas évident, je pense que beaucoup de l'architecture logiciel est cette phase d'apprentissage. Charger du code dans vos neurones est si péniblement lent que cela paie de trouver des stratégies pour en réduire le volume. Ce livre a une section entière sur les [patrons de *découplage*](decoupling-patterns.html), et un gros morceau de *Design Patterns* repose sur la même idée.
+Bien que ce ne soit pas évident, je pense que beaucoup de l'architecture logicielle est cette phase d'apprentissage. Charger du code dans vos neurones est si péniblement lent que cela paie de trouver des stratégies pour en réduire le volume. Ce livre a une section entière sur les [patrons de *découplage*](decoupling-patterns.html), et un gros morceau de *Design Patterns* repose sur la même idée.
 
 [ob]You can define "decoupling" a bunch of ways, but I think if two pieces of code
 are coupled, it means you can't understand one without understanding the other.
@@ -215,7 +215,7 @@ Vous pouvez définir le "découplage" de différentes manières, mais je crois q
 [ob]To me, this is a key goal of software architecture: **minimize the amount of
 knowledge you need to have in-cranium before you can make progress.**[oe]
 
-Pour moi, voici le but clé de l'architecture logiciel : **Minimiser le montant de connaissance dont vous avez besoin d'avoir en tête avant de pouvoir réaliser un avancée.**
+Pour moi, voici le but clé de l'architecture logicielle : **Minimiser la quantité de connaissances dont vous avez besoin d'avoir en tête avant de pouvoir réaliser un avancée.**
 
 [ob]The later stages come into play too, of course. Another definition of decoupling
 is that a *change* to one piece of code doesn't necessitate a change to another.
@@ -233,7 +233,7 @@ the wind. Each change will mean touching only one or two select methods, and you
 can dance across the surface of the codebase leaving nary a shadow.
 [oe]
 
-Ceci semble bien, n'est ce pas ? Découplez tout et vous serez capable de coder comme le vent. Chaque modification signifiera toucher seulement une ou deux méthodes, et vous pourrez danser sur la surface du codebase en ne laissant rien moins qu'une ombre.
+Cela présente bien, non ? Découplez tout et vous serez capable de coder comme le vent. Chaque modification signifiera toucher seulement une ou deux méthodes, et vous pourrez danser sur la surface du codebase en ne laissant rien moins qu'une ombre.
 
 [ob]This feeling is exactly why people get excited about abstraction, modularity,
 design patterns, and software architecture. A well-architected program really is
@@ -241,7 +241,7 @@ a joyful experience to work in, and everyone loves being more productive. Good
 architecture makes a *huge* difference in productivity. It's hard to overstate
 how profound an effect it can have.[oe]
 
-Ce sentiment est exactement ce pourquoi les gens sont enthousiastes à propos de l'abstraction, de la modularité, des patrons de conception, et de l'architecture logicielle. Un programme bien architecturé fait que travailler dessus est une expérience joyeuse, et chacun aime bien être plus productif. Une bonne architecture rend une *haute* différence en productivité. C'est difficile d'exagérer sur l'effet profond que ca peut avoir.
+Ce sentiment est exactement ce pourquoi les gens sont enthousiastes à propos de l'abstraction, de la modularité, des patrons de conception, et de l'architecture logicielle. Un programme bien architecturé fait que travailler dessus est une expérience joyeuse, et chacun aime bien être plus productif. Une bonne architecture fait une *énorme* différence en productivité. C'est difficile d'exagérer sur l'effet profond que cela peut avoir.
 
 [ob]But, like all things in life, it doesn't come free. Good architecture takes real
 effort and discipline. Every time you make a change or implement a feature, you
@@ -250,7 +250,7 @@ have to take great care to both <span name="maintain">organize</span> the code
 well and *keep* it organized throughout the thousands of little changes that
 make up a development cycle.[oe]
 
-Mais, comme toutes choses dans la vie, ça n'est pas gratuit. Une bonne architecture demande un réel effort et une discipline. A chaque fois que vous faites une modification ou implémenter une fonctionnalité, vous devez travailler dur pour l'intégrer gracieusement au reste du programme. Vous devez prendre grand soin d'organiser à la fois le code correctement et le *garder* <span name="maintain">organisé</span> à travers les milliers de petits changements qui font votre cycle de développement.
+Mais, comme toutes choses dans la vie, ce n'est pas gratuit. Une bonne architecture demande un réel effort et une discipline. A chaque fois que vous faites une modification ou implémentez une fonctionnalité, vous devez travailler dur pour l'intégrer gracieusement au reste du programme. Vous devez prendre grand soin d'organiser à la fois le code correctement et le *garder* <span name="maintain">organisé</span> à travers les milliers de petits changements qui font votre cycle de développement.
 
 <aside name="maintain">
 
@@ -273,7 +273,7 @@ Tout comme le jardinage, ça ne suffit pas de planter de nouvelles plantes. Vous
 introduce abstractions at those points. Likewise, you have to determine where
 extensibility should be engineered in so future changes are easier to make.[oe]
 
-Vous devez penser à quelles parties du programme devraient être découplées et introduire des abstractions à ces endroits là. Egalement, vous devez déterminer où l'extensibilité devrait être présente pour que dans le futur les changements soient plus faciles à effectuer.
+Vous devez penser à quelles parties du programme devraient être découplées et introduire des abstractions à ces endroits-là. Egalement, vous devez déterminer où l'extensibilité devrait être présente pour que dans le futur les changements soient plus faciles à effectuer.
 
 [ob]People get really excited about this. They envision future developers (or just
 their future self) stepping into the codebase and finding it open-ended,
@@ -302,7 +302,7 @@ Cet effort se révèle payant si yous avez vu juste et que vous finissez par ret
 it](http://en.wikipedia.org/wiki/You_aren't_gonna_need_it) -- as a mantra to use
 to fight this urge to speculate about what your future self may want.[oe]
 
-Des gens ont inventé le terme " YAGNI " -- [You aren't gonna need it (vous n'en aurez pas besoin)](http://en.wikipedia.org/wiki/You_aren't_gonna_need_it) -- comme un mantra à utiliser pour combattre ce besoin de spéculer sur ce que votre futur peut vouloir.
+Des gens ont inventé le terme " YAGNI " -- [You aren't gonna need it (vous n'en aurez pas besoin)](https://fr.wikipedia.org/wiki/YAGNI) -- comme un mantra à utiliser pour combattre ce besoin de spéculer sur ce que votre futur peut vouloir.
 
 </aside>
 
@@ -311,7 +311,7 @@ has spiraled out of control. You've got interfaces and abstractions everywhere.
 Plug-in systems, abstract base classes, virtual methods galore, and all sorts of
 extension points.[oe]
 
-Quand les gens sont sur-zélés en ça, vous obtenez un codebase pour dont l'architecture est devenue hors de contrôle. Vous avez des interfaces et des abstractions de partout. Systèmes de plugins, classes de base abstraite, méthodes virtuelles en abondance, et toutes sortes de points d'extension.
+Quand les gens sont trop zélés, vous obtenez un codebase pour dont l'architecture est devenue hors de contrôle. Vous avez des interfaces et des abstractions de partout. Systèmes de plugins, classes de base abstraite, méthodes virtuelles en abondance, et toutes sortes de points d'extension.
 
 [ob]It takes you forever to trace through all of that scaffolding to find some real
 code that does something. When you need to make a change, sure, there's probably
@@ -544,7 +544,7 @@ disheartens a lot of people. Especially for novices who just want to make a
 game, it's intimidating to hear, "There is no right answer, just different
 flavors of wrong."[oe]
 
-Il n'y a pas de réponses simples ici, seulement des compromis. A partir des emails que je reçois, ceci décourage beaucoup de gens. Spécialement pour des novices qui veulent juste faire un jeu, il est intimidant d'entendre, "Il n'y a aucune bonne réponse, juste différents genre mauvais goûts."
+Il n'y a pas de réponses simples ici, seulement des compromis. Au vu des emails que je reçois, cela décourage beaucoup de gens. Spécialement pour des novices qui veulent juste faire un jeu, il est intimidant d'entendre, "Il n'y a aucune bonne réponse, juste différents genre mauvais goûts."
 
 [ob]But, to me, this is exciting! Look at any field that people dedicate careers to
 mastering, and in the center you will always find a set of intertwined
@@ -570,7 +570,7 @@ against one another. This means you can spend your life exploring the vast space
 of viable strategies. A poorly designed game collapses to the one winning tactic
 played over and over until you get bored and quit.[oe]
 
-Pour moi, Ceci a beaucoup en commun avec les jeux eux-mêmes. Un jeu comme les échecs ne peut jamais être maitrisé par ce que toutes les pièces sont si parfaitement équilibrées les unes contres les autres. Ceci veut dire que vous pouvez passer votre vie à explorer le vaste champs des stratégies viables. Un jeu pauvrement conçu s'effondre à cause de l'unique tactique jouée encore et encore jusqu'à ce que vous soyez fatigué et abandonnez.
+Pour moi, Ceci a beaucoup en commun avec les jeux eux-mêmes. Un jeu comme les échecs ne peut jamais être maitrisé parce que toutes les pièces sont si parfaitement équilibrées les unes aux autres. Cela veut dire que vous pouvez passer votre vie à explorer le vaste champs des stratégies viables. Un jeu pauvrement conçu s'effondre à cause de l'unique tactique jouée encore et encore jusqu'à ce que vous soyez fatigué et abandonniez.
 
 [ob]## Simplicity[oe]
 
@@ -587,7 +587,7 @@ Récemment, j'ai eu l'impression que si il y a une méthode qui facilite ces con
 then go from there. I find if I can keep things simple, there's less code
 overall. That means less code to load into my head in order to change it.[oe]
 
-Je cherche à rendre les structures de données et les algorithmes corrects (à peu près dans cet ordre) et puis j'avance à partir de là. Je trouve que si je garde les choses simples, il y a moins de code globalement. Cela signifie moins de code à charger dans ma tête en vue de le modifier.
+Je cherche à rendre les structures de données et les algorithmes corrects (à peu près dans cet ordre) et puis j'avance à partir de là. Je trouve que si je garde les choses simples, et il y a moins de code globalement. Cela signifie moins de code à charger dans ma tête en vue de le modifier.
 
 [ob]It often runs fast because there's simply not as much overhead and not much code
 to execute. (This certainly isn't always the case though. You can pack a lot of
@@ -618,7 +618,7 @@ Une autre citation de choix vient de Antoine de Saint-Exupéry : "La perfection 
 [ob]Closer to home, I'll note that every time I revise a chapter in this book, it
 gets shorter. Some chapters are tightened by 20% by the time they're done.[oe]
 
-Plus proche de la maison, je noterai qu'à chaque fois que je révise un chapitre de ce livre, il devient plus court. Quelques chapitres sont rétrécis de 20% par rapport au début.
+Plus proche de la réalité, je noterai qu'à chaque fois que je révise un chapitre de ce livre, il devient plus court. Quelques chapitres sont rétrécis de 20% par rapport au début.
 
 </aside>
 
