@@ -44,7 +44,7 @@ Chaque arbre a un tas de bits qui lui sont associés :
 * [ob]Tuning parameters like size and tint so that each tree looks different.[oe]
 
 * Un maillage de polygones qui définit la forme du tronc, des branches, et du feuillage.
-* Des textures pour l'écorce et le feuilles.
+* Des textures pour l'écorce et les feuilles.
 * Sa position et son orientation dans la forêt.
 * Des paramètres de réglages de la taille et de la teinte pour que chaque arbre soit différents.
 
@@ -58,7 +58,7 @@ Si vous étiez en train d'esquisser en dehors du code, vous pourriez avoir ceci 
 forest of these objects is too much to throw at the GPU in one frame.
 Fortunately, there's a time-honored trick to handling this.[oe]
 
-C'est beaucoup de données, et le maillage et les textures sont particulièrement grand. Une forêt entière de ces objets est bien trop pour l'envoyer au GPU en une image. Heuresement, il y a une astuce éprouvée pour gérer cela.
+C'est beaucoup de données, et le maillage et les textures sont particulièrement grand. Une forêt entière de ces objets est bien trop pour l'envoyer au GPU en une image. Heureusement, il y a une astuce éprouvée pour gérer cela.
 
 [ob]The key observation is that even though there may be thousands of trees in the
 forest, they mostly look similar. They will likely all use the <span
@@ -134,7 +134,7 @@ help rendering. Before the forest gets on screen, it has to work its way over to
 the GPU. We need to express this resource sharing in a way that the graphics
 card understands.[oe]
 
-Ceci est bien beau pour stocker des choses en mémoire principale, mais ça n'aide pas au rendu. Avant que la forêt arrive sur l'écran, elle doit faire son chemin vers le GPU. Nous avons besoin d'exprimer ce partage de ressource d'une manière que la carte graphique peut comprendre.
+Tout cela est bien beau pour stocker des choses en mémoire principale, mais ça n'aide pas au rendu. Avant que la forêt arrive sur l'écran, elle doit faire son chemin vers le GPU. Nous avons besoin d'exprimer ce partage de ressource d'une manière que la carte graphique peut comprendre.
 
 [ob]## A Thousand Instances
 [oe]
@@ -147,7 +147,7 @@ push over every tree instance's unique data -- its position, color, and scale.
 Finally, we tell the GPU, "Use that one model to render each of these
 instances."[oe]
 
-Pour minimiser le montant de données que nous avons à envoyer au GPU, nous voulons être capable d'envoyer les données partagées -- le `TreeModel` -- juste *une fois*. Puis, séparément, nous poussons chaque données uniques des instances d'arbre -- Sa position, couleur, et son échelle. Enfin, nous disons au GPU, " Utilise ce modèle pour rendre chacune de ces instances. "
+Pour minimiser la quantité de données que nous avons à envoyer au GPU, nous voulons être capable d'envoyer les données partagées -- le `TreeModel` -- juste *une fois*. Puis, séparément, nous poussons chaque données uniques des instances d'arbre -- Sa position, couleur, et son échelle. Enfin, nous disons au GPU, " Utilise ce modèle pour rendre chacune de ces instances. "
 
 [ob]Fortunately, today's graphics APIs and <span name="hardware">cards</span>
 support exactly that. The details are fiddly and out of the scope of this book,
@@ -218,7 +218,7 @@ where there isn't a really well-defined identity for the shared object. In those
 cases, it feels more like an object is magically in multiple places at the same
 time. Let me show you another example.[oe]
 
-Je trouve ce patron moins évident (et donc plus intélligent) quand il est utilisé dans des cas où il n'y a pas une identité bien définie pour l'objet partagé. Dans ces cas, il semble plus comme un objet qui est magiquement en de multiples endroits en même temps. Permettez moi de vous montrer un autre exemple.
+Je trouve ce patron moins évident (et donc plus intelligent) quand il est utilisé dans des cas où il n'y a pas une identité bien définie pour l'objet partagé. Dans ces cas, il semble plus comme un objet qui est magiquement en de multiples endroits en même temps. Permettez moi de vous montrer un autre exemple.
 
 [ob]## A Place To Put Down Roots[oe]
 
@@ -240,8 +240,8 @@ Chaque type de terrain a un certain nombre de propriétés qui affectent le game
 * [ob]A texture used to render it.[oe]
 
 * Un coût de mouvement lequel détermine à quelle vitesse les joueurs peuvent se déplacer dessus.
-* Un drapeau pour que si le terrain est de l'eau il puisse être traversé en bateau.
-* Une texture utilisé pour le rendre.
+* Un drapeau pour que si le terrain est immergé il puisse être traversé en bateau.
+* Une texture utilisée pour l'affichage.
 
 [ob]Because we game programmers are paranoid about efficiency, there's no way we'd
 store all of that state in <span name="learned">each</span> tile in the world.
@@ -297,7 +297,7 @@ data for a single terrain type is smeared across a bunch of methods. It would be
 really nice to keep all of that encapsulated together. After all, that's what
 objects are designed for.[oe]
 
-Vous avez compris l'idée. Cela fonctionne, mais je trouve ça terrible. Je pense au coût de mouvement et à l'humidité comme *donnée* du terrain, mais ici c'est embarqué dans le code. Pire, les données pour un simple type de terrain est barbouillé en un ensemble de méthodes. Cela pourrait être bien de garder tout ça encapsulé ensemble. Après tout, c'est ce pourquoi les objets sont faits.
+Vous avez compris l'idée. Cela fonctionne, mais je trouve cela nauséabond. Je pense au coût de mouvement et à l'humidité comme *donnée* du terrain, mais ici c'est embarqué dans le code. Pire, les données pour un simple type de terrain est barbouillé en un ensemble de méthodes. Cela pourrait être bien de garder tout ça encapsulé ensemble. Après tout, c'est ce pourquoi les objets sont faits.
 
 [ob]It would be great if we could have an actual terrain *class*, like:[oe]
 
@@ -349,7 +349,7 @@ Chaque tuile qui utilise le même terrain pointera vers la même instance de ter
 be a little more complex to manage if you were to dynamically allocate them.
 Instead, we'll just store them directly in the world:[oe]
 
-Comme les instances de terrain sont utilisées en de multiples endroits, leur durée de vie devrait être un petit plus complexe à gérer que vous les allouiez dynamiquement. Plutôt, nous les stockerons directement dans le monde :
+Comme les instances de terrain sont utilisées en de multiples endroits, leur durée de vie devrait être un petit plus complexe à gérer si vous les attribuiez dynamiquement. Plutôt, nous les stockerons directement dans le monde :
 
 ^code world-terrain
 
@@ -366,7 +366,7 @@ Puis nous pouvons les utiliser pour peindre le sol comme ceci :
 [ob]I'll admit this isn't the world's greatest procedural terrain generation
 algorithm.[oe]
 
-J'admet que ce n'est pas le meilleur algorithme de génération procédural de terrain du monde.
+J'admettrai que ce n'est pas le meilleur algorithme de génération procédural de terrain du monde.
 
 </aside>
 
@@ -419,7 +419,7 @@ my tests for this chapter, there was no penalty for using a flyweight over an
 enum. Flyweights were actually noticeably faster. But that's entirely dependent
 on how other stuff is laid out in memory.[oe]
 
-Comme toujours, la règle d'or de l'optimisation est de *profiler en premier*. Le matériel d'ordinateur moderne est trop complexe pour que la performance soit un jeu de pure raison désormais. Dans mes tests pour ce chapitre, il n'y avait aucune pénalité d'utiliser un poids léger avec une énumération. Les poids légers étaient vraiment plus rapide. Mais ceci est entièrement dépendant de comment l'autre chose est agencée en mémoire.
+Comme toujours, la règle d'or de l'optimisation est de *profiler en premier*. Le matériel d'ordinateur moderne est trop complexe pour que la performance soit un jeu de pure raison désormais. Dans mes tests pour ce chapitre, il n'y avait aucune pénalité d'utiliser un poids léger comparé à une énumération. Les poids légers étaient vraiment plus rapide. Mais ceci est entièrement dépendant de comment l'autre chose est agencée en mémoire.
 
 [ob]What I *am* confident of is that using flyweight objects shouldn't be dismissed
 out of hand. They give you the advantages of an object-oriented style without
@@ -463,7 +463,7 @@ Ce en quoi je *suis* confiant est qu'utiliser des objets poids léger ne devrait
     that means that an <a href="object-pool.html" class="pattern">Object
     Pool</a> might be a helpful place to store them.[oe]
 	
-* En vue de retourner un poids léger créer précédemment, vous aurez à garder une trace de la piscine qui contient ceux que vous avez déjà instanciés. Comme le nom l'indique, cela signifie qu'une <a href="object-pool.html" class="pattern">Piscine d'Objet</a> pourrait être un endroit utile pour les stocker.
+* En vue de retourner un poids léger créer précédemment, vous aurez à garder une trace du groupement (appelée pool ou piscine) qui contient ceux que vous avez déjà instanciés. Comme le nom l'indique, cela signifie qu'une <a href="object-pool.html" class="pattern">Piscine d'Objet</a> pourrait être un endroit utile pour les stocker.
 	
 * [ob]When you're using the <a class="pattern" href="state.html">State</a>
     pattern, you often have "state" objects that don't have any fields specific
